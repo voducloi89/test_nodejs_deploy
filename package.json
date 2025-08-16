@@ -1,0 +1,25 @@
+{
+  "name": "test_nodejs_deploy",
+  "version": "1.0.0",
+  "description": "This repo for test how seting for github CI/CD to EC2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voducloi89/test_nodejs_deploy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/voducloi89/test_nodejs_deploy/issues"
+  },
+  "homepage": "https://github.com/voducloi89/test_nodejs_deploy#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
