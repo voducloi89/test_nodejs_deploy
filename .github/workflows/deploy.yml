@@ -6,7 +6,6 @@ on:
       - main # Or your desired branch
 
 jobs:
-  build:
   deploy:
     runs-on: ubuntu-latest
     steps:
