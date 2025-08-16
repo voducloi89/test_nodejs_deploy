@@ -20,21 +20,21 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: loi_test
           SOURCE: .
-      with:
-        SCRIPT_BEFORE: |
-            whoami
+        with:
+          SCRIPT_BEFORE: |
+              whoami
+              ls -al
+              mkdir -p loi_test
+          SCRIPT_AFTER: |
+            cd loi_test
             ls -al
-            mkdir -p loi_test
-        SCRIPT_AFTER: |
-          cd loi_test
-          ls -al
 
-          echo "Installing PM2..."
-          if ! command -v pm2 &> /dev/null; then
-            npm install -g pm2
-          fi
+            echo "Installing PM2..."
+            if ! command -v pm2 &> /dev/null; then
+              npm install -g pm2
+            fi
 
-          npm install
+            npm install
 
-          echo "Starting/restarting application..."
-          pm2 restart server.js || pm2 start server.js
+            echo "Starting/restarting application..."
+            pm2 restart server.js || pm2 start server.js
