@@ -6,6 +6,7 @@ on:
       - main # Or your desired branch
 
 jobs:
+  build:
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -20,7 +21,9 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: loi_test
           SOURCE: .
+      - name: go to loi_test directory
+        run: cd ~/loi_test
       - name: Install dependencies
         run: npm install
       - name: pm2 restart
-        run: pm2 restart server
+        run: pm2 restart server || pm2 start server.js --name server
